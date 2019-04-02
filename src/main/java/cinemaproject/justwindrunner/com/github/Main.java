@@ -1,4 +1,4 @@
-package justwindrunner.cinemaproject.com.github;
+package cinemaproject.justwindrunner.com.github;
 
 import org.apache.log4j.Logger;
 import org.osjava.sj.loader.SJDataSource;
@@ -16,6 +16,7 @@ public class Main {
     public static final Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
+        LOGGER.info("Project started");
         try {
             DataSource dataSource = (SJDataSource) new InitialContext().lookup("db");
             Connection connection = dataSource.getConnection();
@@ -33,6 +34,8 @@ public class Main {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        LOGGER.warn("Project end");
+
     }
 }
 
