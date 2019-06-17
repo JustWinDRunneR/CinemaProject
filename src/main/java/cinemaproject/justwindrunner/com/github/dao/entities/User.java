@@ -27,32 +27,35 @@ public class User {
         private String name;
         private String email;
 
-        private Integer id;
-        private String surname;
-        private String password;
-        private Integer roleId;
+        /**
+         * optional fields
+         */
+        private Integer id = 0;
+        private String surname = "unknown";
+        private String password = "unknown";
+        private Integer roleId = 0;
 
         public Builder(String name, String email) {
             this.name = name;
             this.email = email;
         }
 
-        public Builder setId(Integer id) {
+        public Builder userId(Integer id) {
             this.id = id;
             return this;
         }
 
-        public Builder setSurname(String surname) {
+        public Builder surname(String surname) {
             this.surname = surname;
             return this;
         }
 
-        public Builder setPassword(String password) {
+        public Builder password(String password) {
             this.password = password;
             return this;
         }
 
-        public Builder setRoleId(Integer roleId) {
+        public Builder roleId(Integer roleId) {
             this.roleId = roleId;
             return this;
         }
