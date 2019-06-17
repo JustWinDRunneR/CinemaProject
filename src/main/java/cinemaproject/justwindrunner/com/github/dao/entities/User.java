@@ -40,22 +40,22 @@ public class User {
             this.email = email;
         }
 
-        public Builder userId(Integer id) {
+        public Builder setUserId(Integer id) {
             this.id = id;
             return this;
         }
 
-        public Builder surname(String surname) {
+        public Builder setSurname(String surname) {
             this.surname = surname;
             return this;
         }
 
-        public Builder password(String password) {
+        public Builder setPassword(String password) {
             this.password = password;
             return this;
         }
 
-        public Builder roleId(Integer roleId) {
+        public Builder setRoleId(Integer roleId) {
             this.roleId = roleId;
             return this;
         }

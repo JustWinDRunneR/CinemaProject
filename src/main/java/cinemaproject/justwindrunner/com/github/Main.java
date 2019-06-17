@@ -1,5 +1,6 @@
 package cinemaproject.justwindrunner.com.github;
 
+import cinemaproject.justwindrunner.com.github.dao.entities.User;
 import org.apache.log4j.Logger;
 import org.osjava.sj.loader.SJDataSource;
 
@@ -35,7 +36,6 @@ public class Main {
             e.printStackTrace();
         }
         LOGGER.warn("Project end");
-
     }
 }
 
