@@ -1,6 +1,7 @@
 package cinemaproject.justwindrunner.com.github;
 
 import cinemaproject.justwindrunner.com.github.dao.entities.User;
+import cinemaproject.justwindrunner.com.github.util.ConnectionManager;
 import org.apache.log4j.Logger;
 import org.osjava.sj.loader.SJDataSource;
 
@@ -17,10 +18,12 @@ public class Main {
     public static final Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
-        LOGGER.info("Project started");
+//        LOGGER.info("Project started");
         try {
-            DataSource dataSource = (SJDataSource) new InitialContext().lookup("db");
-            Connection connection = dataSource.getConnection();
+            /*DataSource dataSource = (SJDataSource) new InitialContext().lookup("db");
+            Connection connection = dataSource.getConnection();*/
+
+            Connection connection = ConnectionManager.getConnection();
 
             String query = "SELECT * FROM cinema.movie;";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -30,12 +33,10 @@ public class Main {
 
             System.out.println(resultSet.getString("title"));
 
-        } catch (NamingException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        LOGGER.warn("Project end");
+//        LOGGER.warn("Project end");
     }
 }
 
